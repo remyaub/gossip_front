@@ -1,0 +1,44 @@
+<h1>Bonjour <%= params[:first_name] %> !</h1><br>
+<div class="row">
+            <div class="col-md-3 col-md-offset-7"></div> 
+            <img src="http://www.beekoz.fr/wp-content/uploads/2015/01/Deschamps-parle-%C3%A0-son-adjoint-Guy-Stephan-avec-la-main-devant-la-bouche.jpg" class="img-fluid" alt="Responsive image">
+</div>
+
+ <div class="container my-5">
+      <div class="row">
+          <div class="col-1">
+          </div>
+
+          <div class="col-10">
+
+            <ul class="list-group">
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <strong> La liste de tous les Gossips </strong>
+                <span class="badge badge-primary badge-pill"></span>
+              </li>
+        
+              <% Gossip.all.each_with_index do |gossip, index| %>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+               Titre: <%= gossip.title %> <br><br>
+               Gossip: <%= gossip.content %>
+                
+                <span class="badge badge-primary badge-pill">par <%= gossip.author.pseudo %></span>
+              </li>
+              <% end %>
+            </ul>
+
+          </div>
+
+          <div class="col-1">
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
