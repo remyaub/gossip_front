@@ -20,11 +20,17 @@ h1 {
 
 p {
     color: grey;
-    text-align: center;
+    text-align: center
   }
   
 body {
 
   font-family: 'Quicksand', sans-serif;
   background-color: #FCFCFC
+}
+
+.text{
+
+  text-align: left
+
 }

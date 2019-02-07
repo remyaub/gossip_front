@@ -1,4 +1,7 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
+    
     def user
-end
+        @user = User.find(params[:id])
+    end
+
 end
