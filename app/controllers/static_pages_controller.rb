@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
+  
   def team
   end
 
@@ -6,7 +7,8 @@ class StaticPagesController < ApplicationController
   end
 
   def welcome
-    @user = User.find_by(first_name: params[:first_name])
+    id = session[:user_id]
+    @user = User.find(id: params[:id])
   end
   
 end

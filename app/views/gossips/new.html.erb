@@ -1,7 +1,7 @@
 <h1><%= @title %></h1>
 
 <form action= <%= gossips_path %> method="POST">
-    <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> >
+    <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %>
         <div class="container my-5">
             <div class="row">
             <div class="col-2">
@@ -18,19 +18,17 @@
             <textarea name="content" class="form-control" rows="5" id="comment"> </textarea>
         </div>
             <input class="btn btn-primary" type="submit" value="Submit">
-            <div class="col-2">
-            <div>
-                <% if @gossip.errors.any?%>
-                <p>Nous n'avons pas réussi à créer le potin pour la (ou les) raison(s) suivante(s) :</p>
-                    <ul>
-                        <% @gossip.errors.full_messages.each do |message| %>
-                        <li><%= message %></li>
-                        <% else %>
-                            <p>NIceone</p>
-                        <% end %>
-                    </ul>
- 
-  <% end %>
+            <div class="col-12">
+        <div><br>
+            <% if @gossip.errors.any? %>
+                <div class="alert alert-danger" role="alert">
+                    <h4 class="alert-heading">Crap!</h4>
+                    <p><% @gossip.errors.full_messages.each do |message| %></p>
+                    <li><%= message %></li>  
+                    <hr>
+                    <% end %>
+                </div>
+            <% end %>
 </form>
 
 
