@@ -12,14 +12,17 @@ class SessionsController < ApplicationController
             redirect_to home_path
         else
             flash[:danger] = 'Invalid email/password combination'
-            render 'new'
+            render :new
         end
     end
 
     def destroy
-        if session.delete(:user_id)
-            redirect_to new_session_path
-        end
+        session = Session.delete(:user_id)
+            
+    end
+
+    def show
+        redirect_to new_session_path
     end
 
 end

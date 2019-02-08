@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :gossips
   resources :users
-  resources :sessions, only:[:new, :create, :destroy]
+  resources :sessions
   root 'sessions#new'
   get 'welcome/', to: 'index#index', as: 'home'
   get '/team', to: 'static_pages#team'
